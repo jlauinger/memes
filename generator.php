@@ -5,6 +5,11 @@ if (strpos($_GET["meme"], "/") !== false) die("Main thread threw java.lang.PathT
 
 require("config.php");
 
+/*
+ * largely inspired by
+ * https://github.com/mozi22/MemeGenerator
+ */
+
 class MemeGenerator{
 
   private $upperText;

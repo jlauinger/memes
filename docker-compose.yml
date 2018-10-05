@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: jlauinger/memegenerator
+    ports:
+      - 8080:80
+    volumes:
+      - ./memes:/srv/app/memes
+      - ./uploads:/srv/app/uploads

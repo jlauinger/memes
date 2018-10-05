@@ -32,7 +32,7 @@ Power-Tools:
 if (isset($_POST["command"]) && !empty($_POST["command"])) {
   $command = $_POST["command"];
   echo "root@ada ~/memes# ".htmlspecialchars($command)."\n";
-  echo "-bash: ".htmlspecialchars(split(" ",$command)[0]).": command not found\n";
+  echo "-bash: ".htmlspecialchars(preg_split("/ /",$command)[0]).": command not found\n";
 }
 ?>
 </pre>

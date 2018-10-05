@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
         $filename = "uploads/".$_FILES["file1"]["name"];
         move_uploaded_file($_FILES["file1"]["tmp_name"], $filename);
         shell_exec("mogrify -resize 500x ".escapeshellarg($filename));
-        $url = htmlspecialchars("https://".$_SERVER["SERVER_NAME"]."/generator.php?custom&meme=".$_FILES["file1"]["name"]);
+        $url = htmlspecialchars("generator.php?custom&meme=".$_FILES["file1"]["name"]);
         echo 'OK! Benutze dieses Meme mit <a href="'.$url.'">'.$url.'</a>';
     }
 }

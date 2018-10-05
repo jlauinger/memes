@@ -16,7 +16,7 @@ class MemeGenerator{
   private $lowerText;
   private $alignment;
   private $background;
-  private $font = '/var/www/jhnslngr.de/memes/impact.ttf';
+  private $font = 'impact.ttf';
   private $im;
   private $imgSize;
 
@@ -165,8 +165,6 @@ class MemeGenerator{
   }
 
   public function processImg() {
-    $filename = "cache/meme"."-".date('Y-m-d')."-".uniqid().".jpg";
-
     if($this->lowerText != "") {
       $this->WorkOnImage($this->lowerText,30,"lower");
     }
@@ -175,7 +173,6 @@ class MemeGenerator{
     }
 
     header('Content-Type: image/jpeg');
-    header('Content-Length: '.filesize($filename));
     imagejpeg($this->im);
 
     imagedestroy($this->im);

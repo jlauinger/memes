@@ -1,7 +1,7 @@
 FROM php:7-apache
 MAINTAINER Johannes Lauinger <johannes@lauinger-it.de>
 
-RUN apt-get update && apt-get install -y libmagickwand-dev --no-install-recommends \
+RUN apt-get update && apt-get install -y libmagickwand-dev imagemagick --no-install-recommends \
   && pecl install imagick \
   && docker-php-ext-enable imagick
 
